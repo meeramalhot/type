@@ -1,7 +1,10 @@
 import random
 import time
+import wonderwords
 
 #https://pypi.org/project/wonderwords/
+#r = RandomWord()
+#r.random_words(3, include_parts_of_speech=["nouns"])
 
 def make_random_sentence():
   nouns = ["puppy", "car", "rabbit", "girl", "monkey"]
