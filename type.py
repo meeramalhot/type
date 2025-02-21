@@ -18,7 +18,13 @@ def typing_test():
 
     input("Press Enter when ready...")
     
-    start = len(" ".join(input().split()))  # Capture length of user input as a time proxy
+    start_time = time.time()
+    start = len(" ".join(input().split()))
+    end_time = time.time()
+
+    elapsed_time_seconds = end_time - start_time
+    elapsed_time_minutes = elapsed_time_seconds / 60
+
     
     print("\nChecking...")
     
@@ -26,9 +32,14 @@ def typing_test():
     correct_words = sentence.split()
     
     score = sum(1 for u, c in zip(user_words, correct_words) if u == c)
-    wpm = score * 2
-    
-    print(f"\nYour estimated speed: {wpm} WPM!")
+
+    if(elapsed_time_minutes !=0):
+      wpm = len(sentence) / elapsed_time_minutes
+      print(f"\nYour estimated speed: {wpm} WPM!")
+    else:
+      wps = len(sentence) / elapsed_time_seconds
+      print(f"\nYour estimated speed: {wps} WPS!")
+
     print("Accuracy:", f"{(score / len(correct_words)) * 100:.2f}%" if correct_words else "0%")
 
 if __name__ == "__main__":
