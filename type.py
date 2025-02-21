@@ -1,6 +1,8 @@
 import random
 import time
 
+#https://pypi.org/project/wonderwords/
+
 def make_random_sentence():
   nouns = ["puppy", "car", "rabbit", "girl", "monkey"]
   verbs = ["writes", "drinks", "jumps", "drives", "barfs"]
